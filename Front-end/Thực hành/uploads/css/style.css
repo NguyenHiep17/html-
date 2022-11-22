@@ -1,0 +1,28 @@
+th {
+    color: aqua !important;
+}
+
+th {
+    color: tomato;
+}
+
+* {
+    color: yellow;
+}
+
+:root {
+    --text-color: red;
+}
+
+h1 {
+    --my-color: green;
+    color: var(--my-color) !important;
+}
+
+h2 {
+    color: var(--text-color)
+}
+
+h3 {
+    color: var(--text-color)
+}
