@@ -6,6 +6,8 @@
     box-sizing: border-box;
 }
 
+/* Common - class chung */
+
 .clear {
     clear: both;
 }
@@ -14,11 +16,32 @@
     color: #fff !important;
 }
 
-html {
-    font-family: Arial, Helvetica, sans-serif;
-    height: 5000px;
+.text-center {
+    text-align: center !important;
 }
 
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-2 {
+    width: 50%;
+}
+
+.col-3 {
+    width: 33.3333%;
+}
 
 /* 
 1. Từ ngoài vào trong
@@ -33,6 +56,8 @@ html {
 3. Màu sắc
 4. Kiểu dáng (kiểu chữ, hình tròn, vuông, ...)
 */
+
+/* Main - class rieng */
 
 #main {}
 
@@ -183,12 +208,6 @@ html {
     margin-top: 48px;
 }
 
-#content .member-item {
-    float: left;
-    width: calc(100%/3);
-    text-align: center;
-}
-
 #content .member-name {
     font-size: 15px;
 }
@@ -236,13 +255,8 @@ html {
 }
 
 .places-list {
-    margin: 32px -8px 48px;
-}
-
-.place-item {
-    float: left;
-    width: 33.33333%;
-    padding: 0 6px;
+    margin-top: 32px;
+    margin-bottom: 48px;
 }
 
 .place-img {
@@ -289,7 +303,74 @@ html {
     background-color: #ccc;
 }
 
-#footer {}
+.contact-section {
+    
+}
+
+.list-contact {
+    padding: 32px 0;
+    display: inline-block;
+}
+
+.item-contact {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.board-contact {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+#board-contact-name {
+    float: left;
+    padding: 8px;
+}
+
+#board-contact-email {
+    float: right;
+    padding: 8px;
+}
+
+#board-contact-message {
+    margin-top: 10px;
+    width: 100%;
+    padding: 8px;
+}
+
+#board-contact-send {
+    color: #fff;
+    background-color: #000;
+    float: right;
+    padding: 8px 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+#board-contact-send:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+
+#footer {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+#footer .fa {
+    color: #757575;
+    font-size: 20px;
+}
+
+#footer .fa:hover {
+    opacity: 0.6;
+}
+
+.end-footer {
+    margin: 15px 0;
+    opacity: 0.6;
+}
 
 .modal {
     position: fixed;
@@ -303,7 +384,7 @@ html {
     display: none;
 }
 
-.nodal.open {
+.modal.open {
     display: flex;
 }
 

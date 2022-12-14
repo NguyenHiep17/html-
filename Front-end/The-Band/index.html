@@ -58,16 +58,16 @@
                     tiến với mục đích là để chuyên nghiệp hóa các sản phẩm âm nhạc liên quan đến HipHop, cũng như phát triển HipHop Tây Nguyên.
                 </p>
 
-                <div class="member-list">
-                    <div class="member-item">
+                <div class="row member-list">
+                    <div class="col col-3 text-center">
                         <p class="member-name">TeA</p>
                         <img src="./assets/img/img-band/teA.PNG" alt="TeA" class="member-img">
                     </div>
-                    <div class="member-item">
+                    <div class="col col-3 text-center">
                         <p class="member-name">Tofu</p>
                         <img src="./assets/img/img-band/Tofu.PNG" alt="Tofu" class="member-img">
                     </div>
-                    <div class="member-item">
+                    <div class="col col-3 text-center">
                         <p class="member-name">PC</p>
                         <img src="./assets/img/img-band/PC.PNG" alt="PC" class="member-img">
                     </div>
@@ -87,8 +87,8 @@
                         <li>November <span class="Quality">10</span></li>
                     </ul>
 
-                    <div class="places-list">
-                        <div class="place-item">
+                    <div class="row places-list">
+                        <div class="col col-3">
                             <img src="./assets/img/img-band/newyork.jpg" alt="newyork" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">New York</h3>
@@ -98,7 +98,7 @@
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-3">
                             <img src="./assets/img/img-band/paris.jpg" alt="Paris" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">Paris</h3>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
 
-                        <div class="place-item">
+                        <div class="col col-3">
                             <img src="./assets/img/img-band/sanfran.jpg" alt="sanfran" class="place-img">
                             <div class="place-body">
                                 <h3 class="place-heading">San Francisco</h3>
@@ -123,20 +123,62 @@
                 </div>
             </div>
 
-            <div class="content-section">
-                <h2 class="section-heading">CONTACT</h2>
-                <p class="section-sub-heading">Fan? Drop a note!</p>
+            <div class="contact-section">
+
+                <div class="content-section">
+
+                    <h2 class="section-heading">CONTACT</h2>
+                    <p class="section-sub-heading">Fan? Drop a note!</p>
+
+                    <div class="row list-contact">
+                        <div class="col col-2 item-contact">
+                            <div class="item-contact-name">
+                                <i class="ti-location-pin">
+                                    Chicago, US
+                                </i>
+                            </div>
+                            <div class="item-contact-phone">
+                                <i class="ti-mobile">
+                                    Phone: +00 151515
+                                </i>
+                            </div>
+                            <div class="item-contact-email">
+                                <i class="ti-email">
+                                    Email: mail@mail.com
+                                </i>
+                            </div>
+                        </div>
+    
+                        <div class="col col-2 board-contact">
+                            <input type="text" id="board-contact-name" placeholder="Name">
+                            <input type="text" id="board-contact-email" placeholder="Email">
+                            <input type="text" id="board-contact-message" placeholder="Message">
+                            <button id="board-contact-send">SEND</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-        <div id="footer">
+        <img src="./assets/img/img-band/one-pp.jpg" alt="Anh one Piece" style="width: 100%; height: auto;">
 
+        <div id="footer">
+            <div class="fa-footer text-center">
+                <i class="fa ti-facebook"></i>
+                <i class="fa ti-instagram"></i>
+                <i class="fa ti-pinterest-alt"></i>
+                <i class="fa ti-twitter-alt"></i>
+            </div>
+            <p class="end-footer text-center">Powered by <a href="w3.css" target="_blank" style="color: #000;">w3.css</a></p>
         </div>
 
     </div>
 
-    <div class="modal js-modal" id="modals">
+    <div class="modal js-modal">
         <div class="modal-container js-modal-container">
             <div class="modal-close js-modal-close">
                 <i class="modal-close-icon ti-close"></i>
@@ -168,36 +210,31 @@
     </div>
 
     <script>
-        // const buyBtns = document.querySelectorAll('.js-buy-tickets')
-        // const modal = document.querySelector('.js-modal')
-        // const modalcontainer = document.querySelector('.js-modal-container')
-        // const modalclose = document.querySelector('.js-modal-close')
-        const buytickets = document.getElementById('click-buy-tickets')
-        const modals = document.getElementById('modals')
-
+        const buyBtns = document.querySelectorAll('.js-buy-tickets')
+        const modal = document.querySelector('.js-modal')
+        const modalcontainer = document.querySelector('.js-modal-container')
+        const modalclose = document.querySelector('.js-modal-close')
 
         function showBuyTickets() {
-            modals.classList.add('open')
+            modal.classList.add('open')
         }
 
-        buytickets.addEventListener('click', showBuyTickets());
+        function hideBuyTickets() {
+            modal.classList.remove('open')
+        }
 
-        // function hideBuyTickets() {
-        //     modal.classList.remove('open')
-        // }
+        for (const buyBtn of buyBtns) {
+            buyBtn.addEventListener('click', showBuyTickets)
+        }
 
-        // for (const buyBtn of buyBtns) {
-        //     buyBtn.addEventListener('click', showBuyTickets)
-        // }
+        modalclose.addEventListener('click', hideBuyTickets)
 
-        // modalclose.addEventListener('click', hideBuyTickets)
+        modal.addEventListener('click',
+            hideBuyTickets)
 
-        // modal.addEventListener('click',
-        //     hideBuyTickets)
-
-        // modalcontainer.addEventListener('click', function(event) {
-        //     event.stopPropagation()
-        // })
+        modalcontainer.addEventListener('click', function(event) {
+            event.stopPropagation()
+        })
     </script>
 
 </body>
